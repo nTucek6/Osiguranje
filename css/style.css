@@ -1,0 +1,44 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/background.jpg');
+    font-style: italic;
+   /* style="background-image: url('img/background.jpg');" */
+}
+#navigacija
+{
+	background-color: #2C3531;
+}
+.navigacija_a
+{
+	/*color: #A2A2A1FF; */
+	color: #D1E8E2;
+}
+.AzurirajKlijent
+{
+	text-decoration: none;
+	color: #636565;
+}
+.footer
+{
+	margin-top: auto;
+	bottom: 0; 
+	width: 100%;
+	height: 50px;
+	background-color: #2C3531; 
+}
+.footer p
+{
+	color:#D1E8E2 ; 
+}
+.hoverEffect:hover{}
+#Filter{cursor: pointer;}
+
+.btnAddKlijent
+{
+	background-color: darkblue;
+}
+
+.CursorPointer{cursor: pointer;}
+

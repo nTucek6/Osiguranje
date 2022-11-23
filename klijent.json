@@ -1,0 +1,64 @@
+﻿/*
+[
+  {
+    "oib": "22540128153",
+    "ime": "Tara",
+    "prezime": "Kovačević",
+    "adresa": "Ulica Vojina Bakića 18",
+    "mjesto": "Cres"
+  },
+  {
+    "oib": "96501973062",
+    "ime": "Dominik",
+    "prezime": "Babić",
+    "adresa": "Kruševačka ulica 72",
+    "mjesto": "Pazin"
+  },
+  {
+    "oib": "02128840964",
+    "ime": "Tina",
+    "prezime": "Mlakar",
+    "adresa": "Ulica Biljske satnije ZNH RH 82",
+    "mjesto": "Vodnjan"
+  }
+]
+
+
+
+[
+  {
+    "proizvodac": "Škoda Auto",
+    "model": "Felicia ",
+    "tip":"osobni automobil",
+    "godina_proizvodnje": "2001",
+    "snaga_motora": "55 kW",
+    "klijentOib": "34795717667",
+    "period": "18.1.2022/18.2.2022",
+    "cijena_osiguranja":"250"
+
+  }
+
+]
+  */
+
+[
+  {
+    "id": "1",
+    "klijentOib": "",
+    "vrsta_doma": "",
+    "povrsina": "",
+    "adresa": "",
+    "mjesto": "",
+    "periodOsiguranja": "",
+    "cijena_osiguranja": ""
+
+  }
+
+
+], [
+  {
+    "iznos": "",
+    "osiguranjeId": ""
+  }
+
+]

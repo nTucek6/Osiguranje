@@ -1,0 +1,19 @@
+{
+	"vijesti": [{
+			"vijest_naziv": "Izvanredni ispitni rok – odjel za ICT",
+			"datum": "24.11.2021",
+			"vijest_tekst": "Raspored pismenih ispita na izvanrednom zimskom ispitnom roku koji će se održati 25.11.2021. u dvorani 2-18."
+		},
+		{
+			"vijest_naziv": "Promjena u rasporedu-svi smjerovi",
+			"datum": "05.11.2021",
+			"vijest_tekst": "Obavještavaju se studenti da se od ponedjeljka 08.11.2021. sva nastava iz dvorane 2-11 se premješta u dvoranu 2-12 i tako ostaje do kraja semestra."
+		},
+		{
+			"vijest_naziv": "Studentski izbori 10. studenog 2021.",
+			"datum": "25.10.2021",
+			"vijest_tekst": "Provjera podataka traje od ponedjeljka, 25. listopada 2021. godine, do utorka, 2. studenoga 2021. godine, do 12.00 sati."
+		}
+	]
+}
+

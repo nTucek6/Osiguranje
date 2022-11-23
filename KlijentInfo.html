@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css">
+     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <title>Osiguranje</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light" id="navigacija" >
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="rounded"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <li class="nav-item dropdown">
+        <a class="nav-link" href="upravljanje.html"><span class="navigacija_a">Upravljanje klijentima</span>
+        </a>
+      </li>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+          </ul>
+        </div>
+        <div class="float-left"><span class="navigacija_a"><button class="btn btn-danger" onclick="Odjava()">Odjava</button></span>
+        </div>
+      </nav>
+    </header>
+  
+
+<!-- ------------------------------------------------body---------------------------------------------------------------------------- --> 
+
+<div class="mt-5 ml-2">
+<div id="KInfo" class="container"></div>
+</div>
+
+<div class="mt-5 ml-2">
+<div class="container"><button class="btn btn-primary mb-1" style="display: inline-flex;"  data-toggle="modal" data-target="#novoOsiguranje" onclick="">Dodavanje novog osiguranja</button><i id="Filter"  data-toggle="modal" data-target="#FilterModal" class="fas fa-filter float-right"></i></div>
+<div class="container">
+<table class="table table-bordered">
+<thead>
+  <th scope="col">Tip osiguranja</th>
+  <th scope="col">Iznos</th>
+  <th scope="col">Period</th>
+  <th scope="col">Stanje</th>
+   <th scope="col">Info</th>
+</thead>
+<tbody id="OsigInfo">
+
+</tbody>
+</table>
+</div>
+</div>
+
+
+<!-- -------------------------------Modal odabir osiguranja------------------------------------------------------------------------------ -->
+<div class="modal fade" id="novoOsiguranje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo osiguranje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="form-group">
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal" data-toggle="modal" data-target="#AutoOsig">Auto osiguranje <i class="fas fa-car"></i></button> 
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal" data-toggle="modal" data-target="#ZivotOsig">Životno osiguranje <i class="fas fa-heartbeat"></i></button> 
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal" data-toggle="modal" data-target="#StambOsig">Stambeno osiguranje <i class="fas fa-home"></i></button> 
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+      </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    </div>
+  </div>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+<!-- --------------------------------Novo auto osiguranje modal---------------------------------------------------------------------------- -->
+<div class="modal fade" id="AutoOsig" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Novo automobilsko osiguranje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="form-group">
+          <select class="form-select" aria-label="Default select example" id="tipVozila">
+            <option value="null" selected>Odaberite tip vozila</option>
+            <option value="osobno vozilo">Osobno vozilo</option>
+            <option value="terensko vozilo">Terensko vozilo</option>
+            <option value="putnicko vozilo">Putničko vozilo</option>
+          </select>
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="form-group">
+  <label for="inptforProizvodac">Proizvođač vozila</label>
+  <input type="text" class="form-control" id="inptProizvodac">
+  <label for="inptforModel">Model vozila</label>
+  <input type="text" class="form-control" id="inptModel"> 
+   <label for="inptforGodProiz">Godina proizvodnje</label>
+  <input type="text" class="form-control" id="inptGodProiz">
+  <label for="inptforMotor">Snaga motora</label>
+  <input type="text" class="form-control" id="inptSnaga" placeholder="kw">
+</div>   
+
+<div class="form-group">
+  <select class="form-select" aria-label="Default select example" id="period">
+    <option value="null" selected>Odaberite trajanje osiguranja</option>
+    <option value="3">3 mjeseca</option>
+    <option value="6">6 mjeseci</option>
+    <option value="12">12 mjeseci</option>
+  </select>
+</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+        <button type="button" onclick="DodajAutoOsiguranje()" class="btn btn-outline-success" >Dodaj</button> 
+      </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    </div>
+  </div>
+</div>
+<!-- --------------------------------kraj modala---------------------------------------------------------------------------------- -->
+
+
+
+<!-- --------------------------------Novo stambeno osiguranje modal--------------------------------------------------------------------- -->
+<div class="modal fade" id="StambOsig" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Novo stambeno osiguranje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="form-group">
+          <select class="form-select" aria-label="Default select example" id="vrstaObjekta">
+            <option value="null" selected>Vrsta objekta</option>
+            <option value="stan">Stan</option>
+            <option value="kuca">Kuća</option>
+            <option value="apartman za iznajmljivanje">Apartman za iznajmljivanje</option>
+          </select>
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="form-group">
+<label for="inptforMjesto">Mjesto osiguranja</label>
+<input type="text" class="form-control" id="inptMjestoOsig">
+<label for="inptforAdresa">Adresa osiguranja</label>
+<input type="text" class="form-control" id="inptAdresaOsig">
+<label for="inptforPovrsina">Površina objekta</label>
+<input type="text" class="form-control" id="inptPovrsinaOsig" placeholder="m2">
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="form-group">
+  <select class="form-select" aria-label="Default select example" id="trajanjeOsig">
+    <option value="null" selected>Trajanje osiguranja</option>
+    <option value="1">1 godina</option>
+    <option value="2">2 godina</option>
+    <option value="3">3 godina</option>
+    <option value="4">4 godina</option>
+    <option value="5">5 godina</option> 
+  </select>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+        <button type="button" onclick="DodajStambenoOsiguranje()" class="btn btn-outline-success" >Dodaj</button> 
+      </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    </div>
+  </div>
+</div>
+<!-- --------------------------------kraj modala---------------------------------------------------------------------------------- -->
+
+
+<!-- --------------------------------Novo zivotno osiguranje modal--------------------------------------------------------------------- -->
+<div class="modal fade" id="ZivotOsig" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Novo životno osiguranje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="form-group">
+         <select class="form-select" aria-label="Default select example" id="trajanjeOsigZivot">
+    <option value="null" selected>Trajanje osiguranja</option>
+    <option value="3">3 godina</option>
+    <option value="4">4 godina</option>
+    <option value="5">5 godina</option> 
+    <option value="6">6 godina</option>
+  </select>
+        </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="form-group">
+          <label for="inptforPovrsina">Starost klijenta</label>
+          <input type="text" class="form-control" id="inptforStarost">
+        </div>
+
+      
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+  <div class="form-group">
+          <label for="inptforPovrsina">Konzumira li klijent nikotin (cigarete, e-cigarete, cigare…)?</label>
+          <div class="form-check">
+       <input  type="radio" name="nikotin" value ="ne">
+      <label class="form-check-label" for="radioButton">
+      Ne
+      </label>
+      </div>
+         <div class="form-check">
+       <input  type="radio" name="nikotin" value ="da">
+      <label class="form-check-label" for="radioButton">
+      Da
+      </label>
+      </div>
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+ <div class="form-group">
+          <label for="inptforPovrsina">Bavi li se klijent nekim opasnim aktivnostima?</label>
+          <div class="form-check">
+       <input  type="radio" name="aktivnost" value ="ne">
+      <label class="form-check-label" for="radioButton">
+      Ne
+      </label>
+      </div>
+         <div class="form-check">
+       <input  type="radio" name="aktivnost" value ="da">
+      <label class="form-check-label" for="radioButton">
+      Da
+      </label>
+      </div>
+        </div>
+
+
+ <div class="form-group">
+          <label for="inptforPovrsina">Ima li obitelj klijenta povijest teških bolesti?</label>
+          <div class="form-check">
+       <input  type="radio" name="tbolest" value ="ne">
+      <label class="form-check-label" for="radioButton">
+      Ne
+      </label>
+      </div>
+         <div class="form-check">
+       <input  type="radio" name="tbolest" value ="da">
+      <label class="form-check-label" for="radioButton">
+      Da
+      </label>
+      </div>
+      </div>
+
+      <!--<div class="form-group">
+          <label for="ExtraInfo">Ako da koje:</label>
+      <input type="text" class="form-control" name="bolesti" id="inptInfoBolest">
+      </div> -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+        <button type="button" onclick="DodajZivotOsiguranje()" class="btn btn-outline-success">Dodaj</button> 
+      </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    </div>
+  </div>
+</div>
+<!-- --------------------------------kraj modala---------------------------------------------------------------------------------- -->
+
+
+<!-- Filter modal -->
+<div class="modal fade" id="FilterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Novo osiguranje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="form-group">
+          <select class="form-select" aria-label="Default select example" id="FilterOption">
+          <option value="null" selected>Odaberite način filtriranja</option>
+          <option value="all">Sve</option>
+          <option value="active">Aktivna osiguranja</option>
+          <option value="notyet">Uskoro aktivna osiguranja</option>
+          <option value="notactive">Neaktivna osiguranja</option>
+          </select>
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+         <button type="button" onclick="FilterOsig()" class="btn btn-outline-success">Filtriraj</button> 
+      </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+ <!-- ----------------------------------------------Kraj---------------------------------------------------------------------- -->
+
+    <footer class="footer">
+      <div class="container">
+       <p class="text-center">Footer</p>
+      </div>
+    </footer>
+
+
+
+
+
+<!-- opis osiguranja na početnoj -->
+
+
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/plugins/moment/js/moment.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase_config.js"></script>
+   <script src="js/redirekcija.js"></script> 
+    <script src="js/klijent.js"></script>
+    <!--<script src="js/auto_osiguranje.js"> </script> -->
+    <script src="js/osiguranje.js"></script>  
+
+    <script type="text/javascript">
+    $(document).ready(function(){KlijentPrikaz();});
+    $(document).ready(function(){OsiguranjaInfo();});   
+    </script>
+  </body>
+</html>

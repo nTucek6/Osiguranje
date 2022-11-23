@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css">
+     <link type="text/css" rel="stylesheet" href="css/style.css"> 
+    <title>Osiguranje</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light" id="navigacija" >
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="rounded"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <li class="nav-item dropdown">
+        <a class="nav-link" href="upravljanje.html"><span class="navigacija_a">Upravljanje klijentima</span>
+        </a> 
+      </li>
+
+          </ul>
+        </div>
+        <div class="float-left"><span class="navigacija_a"><button class="btn btn-danger" onclick="Odjava()">Odjava</button></span>
+        </div>
+      </nav>
+    </header>
+
+
+
+<div class="container mt-1" style="display:inline-flex;">
+  <img src="img/insurance.jpg" style="height:400px;width: 100%;">
+
+</div>
+
+<div class="container mt-4">
+  <div class="row mb-1 "> 
+<div class="col-sm-4 text-center"><button class="btn btn-info" onclick="ShowAuto()" id="btnAuto">Auto osiguranje</button> </div>
+<div class="col-sm-4 text-center"><button class="btn btn-info" onclick="ShowZivot()"id="btnZivot">Životno osiguranje</button> </div>
+<div class="col-sm-4 text-center"><button class="btn btn-info" onclick="ShowStamb()"id="btnStamb">Stambeno osiguranje</button> </div>
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------- -->
+  <div class="row mb-3">
+   <div class="col-sm-12">
+ <table class="table table-bordered table-hover">
+  <thead id="tableHeadData">
+  </thead>
+  <tbody id="tableBodyData">
+   
+  </tbody>
+</table>
+   </div>
+
+   </div>
+ </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+  
+
+ <!-- ----------------------------------------------Kraj---------------------------------------------------------------------- -->
+
+    <footer class="footer">
+      <div class="container">
+       <p class="text-center">Footer</p>
+      </div>
+    </footer>
+
+
+
+
+
+<!-- opis osiguranja na početnoj -->
+
+
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase_config.js"></script>
+    <script src="js/redirekcija.js"></script> 
+   
+    <script src="js/osiguranje.js"> </script>
+    <script type="text/javascript">
+    //  $(document).ready(function(){AutoOsigKorisnici();});
+   //   $(document).ready(function(){ZivotOsigKorisnici();});
+    //  $(document).ready(function(){StambOsigKorisnici();});
+      $(document).ready(function(){ShowAuto();});
+      </script>  
+  </body>
+</html>

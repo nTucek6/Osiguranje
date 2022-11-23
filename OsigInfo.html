@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css">
+     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <title>Osiguranje</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light" id="navigacija" >
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="rounded"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <li class="nav-item dropdown">
+        <a class="nav-link" href="upravljanje.html"><span class="navigacija_a">Upravljanje klijentima</span>
+        </a> 
+      </li>
+
+          </ul>
+        </div>
+        <div class="float-left"><span class="navigacija_a"><button class="btn btn-danger" onclick="Odjava()">Odjava</button></span>
+        </div>
+      </nav>
+    </header>
+
+
+
+<div class="container mt-4">
+  <!-- ----------------------------------------------------------------------------------------------------------------- -->
+  <div class="row mb-1">
+   <div class="col-sm-12">
+    <table class="table table-bordered mb-2" style='display:inline-flex;'>
+      <thead id="GetKlijent">
+        
+      </thead>
+    </table>
+ <table class="table table-bordered table-hover">
+  <thead id="tableDataHead">
+  </thead>
+  <tbody id="tableDataBody">
+  </tbody>
+</table>
+ <div class="float-right" id="ProduljiOsig"></div></div>
+
+   </div>
+ </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+</div>
+
+
+<!-- -----------------------Modal za produljivanje auto osig----------------------------------------------------------------------- -->
+   <div class="modal fade" id="produlji-auto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Produlji auto osiguranje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+             <div class="form-group">
+  <select class="form-select" aria-label="Default select example" id="trajanjeOsigAuto">
+    <option selected>Odaberite trajanje osiguranja</option>
+    <option value="3">3 mjeseca</option>
+    <option value="6">6 mjeseci</option>
+    <option value="12">12 mjeseci</option>
+  </select>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+            <button type="button" onclick="ProduljiAutoOsig()" class="btn btn-success">Produlji</button> 
+            </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+          </div>
+        </div>
+      </div>
+
+
+      <!-- -----------------------Modal za produljivanje stamb osig------------------------------------------------------------------- -->
+   <div class="modal fade" id="produlji-stamb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Produlji stambeno osiguranje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            <div class="form-group">
+  <select class="form-select" aria-label="Default select example" id="trajanjeOsigStamb">
+    <option selected>Trajanje osiguranja</option>
+    <option value="1">1 godina</option>
+    <option value="2">2 godina</option>
+    <option value="3">3 godina</option>
+    <option value="4">4 godina</option>
+    <option value="5">5 godina</option> 
+  </select>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+            <button type="button" onclick="ProduljiStambOsig()" class="btn btn-outline-success">Produlji</button> 
+            </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+          </div>
+        </div>
+      </div>
+
+
+<!-- -----------------------Modal za produljivanje zivot osig------------------------------------------------------------------------ -->
+   <div class="modal fade" id="produlji-zivot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Produlji zivotno osiguranje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+             <div class="form-group">
+         <select class="form-select" aria-label="Default select example" id="trajanjeOsigZivot">
+    <option selected>Trajanje osiguranja</option>
+    <option value="3">3 godina</option>
+    <option value="4">4 godina</option>
+    <option value="5">5 godina</option> 
+    <option value="6">6 godina</option>
+  </select>
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+            <button type="button" onclick="ProduljiZivotOsig()" class="btn btn-outline-success">Produlji</button> 
+            </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+          </div>
+        </div>
+      </div>
+
+
+  
+
+ <!-- ----------------------------------------------Kraj---------------------------------------------------------------------- -->
+
+    <footer class="footer">
+      <div class="container">
+       <p class="text-center">Footer</p>
+      </div>
+    </footer>
+
+
+
+
+
+<!-- opis osiguranja na početnoj -->
+
+
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/plugins/moment/js/moment.js"></script>
+     <script src="assets/plugins/moment/js/moment.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase_config.js"></script>
+    <script src="js/redirekcija.js"></script> 
+     <script src="js/osiguranjeInfo.js"> </script>
+     
+     <script type="text/javascript">
+        $(document).ready(function(){IspisInfo();});
+       
+    </script>  
+   
+  </body>
+</html>

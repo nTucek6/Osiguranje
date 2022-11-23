@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css">
+     <link type="text/css" rel="stylesheet" href="css/style.css">
+  <title>Osiguranje</title>
+</head>
+<body>
+
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-light" id="navigacija" >
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="rounded"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+        <li class="nav-item dropdown">
+        <a class="nav-link" href="upravljanje.html"><span class="navigacija_a">Upravljanje klijentima</span>
+        </a>
+      </li>
+            
+          </ul>
+        </div>
+        <div class="float-left"><span class="navigacija_a"><button class="btn btn-danger" onclick="Odjava()">Odjava</button></span>
+        </div>
+      </nav>
+    </header>
+
+
+
+      
+
+<div class="container mt-4">
+  <!-- ------------------------------Dodavanje klijenta gumb-------------------------------------------------------------------- -->
+  <div class="row mb-1">
+   <div class="col-sm-6">
+  <button class="btn btn-primary mb-1 btnAddKlijent" style="display: inline-flex;" href="#" data-toggle="modal" data-target="#dodaj-klijenta" onclick="clearModal()"><i class="fas fa-user-plus"></i></button>
+   </div>
+   <!-- ------------------------------------Search bar----------------------------------------------------------------------------- -->
+<div class="col-sm-6 text-right">
+  <div style="display:inline-flex;">
+  <div class="form-outline">
+    <input type="search" id="searchBar" class="form-control" placeholder="Pretraga klijenta" />
+  </div>
+  <!--<button type="button" class="btn btn-primary ml-1 rounded-circle">
+    <i class="fas fa-search"></i>
+  </button> -->
+
+</div>
+
+
+   </div>
+ </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">OIB</th>
+       <th scope="col">Ažuriranje</th>
+        <th scope="col">Brisanje</th>
+        <th scope="col">Info</th>
+    </tr>
+  </thead>
+  <tbody id="tableData">
+   
+  </tbody>
+</table>
+</div>
+
+
+<!-- -----------------------Modal za dodavanje klijenta------------------------------------------------------------------------- -->
+   <div class="modal fade" id="dodaj-klijenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Dodaj klijenta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                  <div class="form-group">
+          <select class="form-select" aria-label="Default select example" id="spol">
+            <option value="none" selected>Odaberite spol klijenta</option>
+            <option value="Muško">Muško</option>
+            <option value="Žensko">Žensko</option>
+          </select>
+        </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforIme">Ime</label>
+                <input type="text" class="form-control" id="inptIme" value="" >
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforPrezime">Prezime</label>
+                <input type="text" class="form-control" id="inptPrezime" >
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+               <div class="form-group">
+                <label for="inptforOib">OIB</label>
+                <input type="text" class="form-control" id="inptOIB" >
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforAdresa">Adresa</label>
+                <input type="text" class="form-control" id="inptAdresa" >
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforMjesto">Mjesto</label>
+                <input type="text" class="form-control" id="inptMjesto" >
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+            <button type="button" onclick="DodajKlijenta()" class="btn btn-outline-success">Dodaj</button> 
+            </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="modal fade" id="azuriraj-klijenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ažuriranje klijenta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+               <div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforIme">Ime</label>
+                <input type="text" class="form-control" id="AzurirajIme">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforPrezime">Prezime</label>
+                <input type="text" class="form-control" id="AzurirajPrezime">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+               <div class="form-group">
+                <label for="inptforOib">OIB</label>
+                <input type="text" class="form-control" id="AzurirajOIB" disabled>
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforAdresa">Adresa</label>
+                <input type="text" class="form-control" id="AzurirajAdresu">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforMjesto">Mjesto</label>
+                <input type="text" class="form-control" id="AzurirajMjesto">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+          </div>
+ <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+            <button type="button" onclick="SpremiAzuriranogKlijenta()" class="btn btn-outline-success" data-dismiss="modal">Ažuriraj</button> 
+            </div>
+
+            </div>
+        </div>
+      </div>
+ </div>
+
+  <div class="modal fade" id="obrisi-klijenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Potvrdite brisanje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Odustani</button> 
+            <button type="button" onclick="ObrisiKlijenta()" class="btn btn-outline-success" data-dismiss="modal">Obriši</button>
+            </div>
+            </div>
+
+</div>
+</div>
+
+
+  <footer class="footer">
+      <div class="container">
+       <p class="text-center">Footer</p>
+      </div>
+    </footer>
+
+
+  <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase_config.js"></script>
+     <script src="js/redirekcija.js"></script> 
+    <script src="js/klijent.js"></script>
+   <!-- <script src="js/osiguranje.js"> </script> -->
+    <script type="text/javascript">
+      
+       $(document).ready(function(){IspisKlijenta();});
+        $(document).ready(function(){PretraziKlijent();});
+       
+    </script>  
+</body>
+</html>

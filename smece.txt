@@ -1,0 +1,93 @@
+ <li class="nav-item active">
+<a class="nav-link" href="upravljanje.html"><span class="navigacija_a">Upravljanje klijentima</span></a> <!--navigacija_a style="color:#ADEFD1FF;" -->
+</li> 
+
+--------------------------------------------------------------------------------------------------------------------------
+ <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+
+
+
+
+<div class="modal-body">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforIme">Ime</label>
+                <input type="text" class="form-control" id="inptIme">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforPrezime">Prezime</label>
+                <input type="text" class="form-control" id="inptPrezime">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+               <div class="form-group">
+                <label for="inptforOib">OIB</label>
+                <input type="text" class="form-control" id="inptOIB">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforAdresa">Adresa</label>
+                <input type="text" class="form-control" id="inptAdresa">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="form-group">
+                <label for="inptforMjesto">Mjesto</label>
+                <input type="text" class="form-control" id="inptMjesto">
+              </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+          </div>
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------Pocetak--------------------------------------------------------------------------------- -->
+  <div class="container main-content mt-5">
+  <div class="row">
+   <div class="col-sm-4 text-center">
+    <div id="accordion">
+   <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseAutoOsig" aria-expanded="true" aria-controls="collapseAutoOsig">
+          Automobilsko osiguranje</button>
+
+ <div id="collapseAutoOsig" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body" id="autoOsiguranje">
+        Empty 
+      </div>
+    </div>
+    </div>
+   </div>
+   <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+   <div class="col-sm-4 text-center">
+   
+     <div id="accordion">
+   <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseZivotOsig" aria-expanded="true" aria-controls="collapseZivotOsig"> Životno osiguranje</button>
+
+ <div id="collapseZivotOsig" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body" >
+        Empty
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- ------------------------------------------------------------------------------------------------------------------------ -->
+   <div class="col-sm-4 text-center">
+      <div id="accordion">
+   <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseStambOsig" aria-expanded="true" aria-controls="collapseStambOsig">Stambeno osiguranje</button>
+
+ <div id="collapseStambOsig" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body" id="stambOsiguranje">
+        Empty 
+      </div>
+    </div>
+  </div>
+ <!-- ------------------------------------------------------------------------------------------------------------------------ -->
+  </div>
+  </div>
+  </div> 
